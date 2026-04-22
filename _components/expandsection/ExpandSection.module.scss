@@ -1,7 +1,7 @@
 @use "../../theme/sass" as *;
 
 .expandSection {
-    padding-block: clamp(40px, 6vw, 80px);
+    padding-block-end: clamp(40px, 6vw, 80px);
     cursor: pointer;
 
     .expandCard {

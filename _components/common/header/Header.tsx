@@ -80,11 +80,11 @@ export default function Header() {
         )}
       >
         <div className={cn(global.custom_container)}>
-          <div className="flex font-medium p-3 justify-center gap-2 items-center">
-            <span className="bg-skyBlue text-black rounded-sm py-0.5 px-2">Webinar</span>
+          <div className="font-medium p-3 justify-center gap-2 items-center">
+            <span className="bg-skyBlue text-black rounded-sm py-0.5 px-2 mr-2">Webinar</span>
             The Experience Revolution: Mastering Customer Engagement in the Age
             of AI
-            <Link className="text-redText transition-all hover:underline" href="">
+            <Link className="text-redText transition-all hover:underline ms-2" href="">
               Sign Up
             </Link>
           </div>

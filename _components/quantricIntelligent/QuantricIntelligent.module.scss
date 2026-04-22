@@ -1,0 +1,530 @@
+@use "../../theme/sass" as *;
+
+.section {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(4.5rem, 9vw, 7rem);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(241, 90, 41, 0.12), transparent 22%),
+    radial-gradient(circle at 85% 15%, rgba(151, 214, 223, 0.08), transparent 18%),
+    #020202;
+}
+
+.inner {
+  position: relative;
+}
+
+.diagramPanel {
+  position: relative;
+  @include displayFlex(row, flex-end, center);
+  flex-wrap: wrap;
+
+  .diagram {
+    border: 3.258px solid #929292;
+    background: rgba(0, 0, 0, 0.50);
+    justify-content: center;
+    padding: clamp(10px, 10vw, 20px);
+    font-weight: 500;
+    position: relative;
+    &::after,&::before {
+      content: '';
+      position: absolute;
+      top: 55%;
+      transform: translate(0,-50%);
+      left: -12px;
+      width: 22px;
+      height: 22px;
+      background: #000 url(../../public/assests/images/triangle.svg) no-repeat center/cover;
+      background-size: 22px;
+      z-index: 1;
+    }
+    &::after{
+      top: 45%;
+      left: inherit;
+      right: -13px;
+      rotate: 180deg;
+    }
+    p {
+      max-width: 150px;
+    }
+
+    &.large {
+      height: 247px;
+      width: 247px;
+    }
+    &.medium{
+      width: 206px;
+      height: 206px;
+      margin-bottom: -35px;
+      @include breakpoint(max, md) {
+        margin-bottom: 0;
+      }
+    }
+    &.small{
+    height: 184px;
+    width: 184px;
+    margin-inline: auto;
+    }
+
+    &.middle {
+      max-width: 150px;
+      margin-bottom: 25px;
+@include breakpoint(max, md) {
+        margin-bottom: 0;
+      }
+      &::after,&::before {
+        display: none;
+      }
+      p{
+        text-align: center;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+
+
+.faintLabel {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.09);
+  font-size: clamp(0.95rem, 1.6vw, 1.95rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  user-select: none;
+}
+
+.business {
+  top: 2rem;
+  left: 46%;
+}
+
+.operations {
+  top: 4.1rem;
+  left: 2rem;
+}
+
+.information {
+  top: 4rem;
+  left: 43%;
+}
+
+.batch {
+  top: 7rem;
+  left: 42%;
+}
+
+.streaming {
+  top: 7rem;
+  left: 56%;
+}
+
+.applications {
+  top: 4rem;
+  right: 10%;
+}
+
+.control {
+  top: 15.5rem;
+  left: 47%;
+}
+
+.neural {
+  top: 19.2rem;
+  left: 44%;
+}
+
+.edge {
+  bottom: 9.4rem;
+  left: 1rem;
+}
+
+.hmi {
+  bottom: 9.4rem;
+  left: 32%;
+}
+
+.sense {
+  bottom: 9.4rem;
+  left: 72%;
+}
+
+.actuation {
+  bottom: 9.4rem;
+  right: 2.6rem;
+}
+
+.physical {
+  bottom: 2.5rem;
+  left: 43%;
+}
+
+.connector {
+  position: absolute;
+  border-color: rgba(255, 255, 255, 0.18);
+  border-style: solid;
+  pointer-events: none;
+}
+
+.frameTopLeft {
+  top: 4.2rem;
+  left: 6rem;
+  width: 24%;
+  height: 12.5rem;
+  border-width: 2px 2px 0 2px;
+}
+
+.frameTopCenter {
+  top: 5.4rem;
+  left: 46%;
+  width: 25%;
+  height: 6rem;
+  border-width: 2px 2px 0 2px;
+}
+
+.frameTopRight {
+  top: 4.7rem;
+  right: 5.2rem;
+  width: 22%;
+  height: 12rem;
+  border-width: 2px 2px 0 2px;
+}
+
+.frameBottomCenter {
+  top: 20.7rem;
+  left: 41.5%;
+  width: 20%;
+  height: 8.9rem;
+  border-width: 2px 2px 0 2px;
+}
+
+.frameBottomAxis {
+  left: 41.5%;
+  bottom: 3.6rem;
+  width: 20%;
+  border-top-width: 2px;
+}
+
+.nodeCard {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.66);
+  background: rgba(5, 5, 5, 0.76);
+  padding: 1.4rem 1rem 1.4rem 1.05rem;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 24px 50px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+}
+
+.planningCard {
+  top: 8rem;
+  left: 4rem;
+  width: 10.75rem;
+  min-height: 12.8rem;
+}
+
+.operationalCard {
+  top: 12.2rem;
+  right: 4.5rem;
+  width: 9.4rem;
+  min-height: 11rem;
+}
+
+.machineCard {
+  top: 24rem;
+  left: 39.8%;
+  width: 8rem;
+  min-height: 9rem;
+}
+
+.centerCard {
+  top: 12.3rem;
+  left: 42.5%;
+  display: grid;
+  place-items: center;
+  width: 8.9rem;
+  min-height: 6rem;
+  border-color: hsl(var(--redText));
+  background: rgba(255, 255, 255, 0.98);
+  color: #0d0d0d;
+  box-shadow:
+    0 0 0 1px rgba(241, 90, 41, 0.18),
+    0 16px 30px rgba(241, 90, 41, 0.14);
+}
+
+.loopIcon {
+  width: 1.9rem;
+  height: 1.9rem;
+  color: #fff;
+}
+
+.nodeTitle {
+  line-height: 1.08;
+}
+
+.centerTitle {
+  line-height: 1.06;
+  text-align: center;
+}
+
+.contentPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 32rem;
+  padding-top: 1rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  width: fit-content;
+  border-radius: 0.35rem;
+  background: hsl(var(--skyBlue));
+  padding: 0.35rem 0.6rem;
+  font-weight: 700;
+  text-transform: none;
+  color: #0d0d0d;
+}
+
+.heading {
+  letter-spacing: -0.04em;
+  line-height: 1.06;
+}
+
+.tickWrap {
+  margin-top: 0.2rem;
+  display: inline-flex;
+  color: hsl(var(--redText));
+}
+
+.featureText {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.cta {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: hsl(var(--buttonColorOrange));
+  padding: 1rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 30px rgba(241, 90, 41, 0.24);
+    background: #ff6b34;
+  }
+}
+
+.ctaArrow {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.footerNote {
+  color: rgba(255, 255, 255, 0.75);
+  font-style: italic;
+}
+
+.bottomRails {
+  margin-top: 4.25rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.55rem;
+
+  span {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.85);
+  }
+}
+
+@include breakpoint(max, xl) {
+  .diagramBackdrop {
+    min-height: 35rem;
+  }
+
+  .planningCard {
+    left: 2.4rem;
+  }
+
+  .operationalCard {
+    right: 3rem;
+  }
+}
+
+@include breakpoint(max, lg) {
+  .diagramBackdrop {
+    min-height: 31rem;
+  }
+
+  .contentPanel {
+    max-width: none;
+    padding-top: 0;
+  }
+
+  .planningCard {
+    left: 2rem;
+    width: 9.6rem;
+  }
+
+  .operationalCard {
+    right: 2rem;
+    width: 8.6rem;
+  }
+
+  .machineCard {
+    top: 22rem;
+    left: 37%;
+  }
+
+  .centerCard {
+    left: 40.5%;
+  }
+
+  .frameTopRight {
+    right: 2.5rem;
+  }
+}
+
+@include breakpoint(max, md) {
+  .section {
+    padding-block: 4rem;
+  }
+
+  .diagramBackdrop {
+    min-height: 28rem;
+    overflow: hidden;
+  }
+
+  .faintLabel {
+    font-size: 0.9rem;
+  }
+
+  .planningCard,
+  .operationalCard,
+  .machineCard,
+  .centerCard {
+    transform: scale(0.9);
+    transform-origin: top left;
+  }
+
+  .planningCard {
+    left: 0.7rem;
+    top: 8.5rem;
+  }
+
+  .operationalCard {
+    right: 0.7rem;
+    top: 12rem;
+    transform-origin: top right;
+  }
+
+  .machineCard {
+    top: 22rem;
+    left: 33%;
+  }
+
+  .centerCard {
+    top: 12.1rem;
+    left: 39%;
+  }
+
+  .frameTopLeft {
+    left: 3rem;
+  }
+
+  .frameTopCenter {
+    left: 44%;
+  }
+
+  .frameBottomCenter,
+  .frameBottomAxis {
+    left: 39%;
+  }
+
+  .bottomRails {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@include breakpoint(max, sm) {
+  .diagramBackdrop {
+    min-height: 24rem;
+  }
+
+  .faintLabel {
+    display: none;
+  }
+
+  .planningCard,
+  .operationalCard,
+  .machineCard,
+  .centerCard {
+    transform: scale(0.78);
+  }
+
+  .planningCard {
+    top: 6rem;
+    left: 0.2rem;
+  }
+
+  .centerCard {
+    top: 10rem;
+    left: 33%;
+  }
+
+  .operationalCard {
+    top: 9rem;
+    right: -0.15rem;
+  }
+
+  .machineCard {
+    top: 17rem;
+    left: 29%;
+  }
+
+  .frameTopLeft {
+    top: 3.6rem;
+    left: 2rem;
+    height: 9rem;
+  }
+
+  .frameTopCenter {
+    top: 4.6rem;
+    left: 42%;
+    height: 5rem;
+  }
+
+  .frameTopRight {
+    top: 4rem;
+    right: 1.2rem;
+    height: 9rem;
+  }
+
+  .frameBottomCenter {
+    top: 17rem;
+    left: 35%;
+    height: 6rem;
+  }
+
+  .frameBottomAxis {
+    left: 35%;
+    bottom: 1.7rem;
+  }
+
+  .bottomRails {
+    margin-top: 3rem;
+  }
+}

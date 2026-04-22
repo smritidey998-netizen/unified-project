@@ -305,8 +305,38 @@ export const APPLICATIONS = () => {
 
 export const PLAY_SVG = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14" viewBox="0 0 11 14" fill="none">
-  <path d="M10.25 6.875L0 13.75L-6.01032e-07 0L10.25 6.875Z" fill="#F15A29"/>
-</svg>
-  )
-}
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="11"
+      height="14"
+      viewBox="0 0 11 14"
+      fill="none"
+    >
+      <path
+        d="M10.25 6.875L0 13.75L-6.01032e-07 0L10.25 6.875Z"
+        fill="#F15A29"
+      />
+    </svg>
+  );
+};
+
+const svgConstant = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="27"
+      height="25"
+      viewBox="0 0 27 25"
+      fill="none"
+    >
+      <path
+        d="M11.7266 18.6758L3.96777 4.01562L2.70215 1.625L23.6299 1.625L22.3643 4.01563L14.6055 18.6758L13.166 21.3965L11.7266 18.6758Z"
+        fill="#929292"
+        stroke="black"
+        stroke-width="3.25779"
+      />
+    </svg>
+  );
+};
+
+export default svgConstant;

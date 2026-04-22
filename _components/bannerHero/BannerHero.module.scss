@@ -17,17 +17,18 @@
 
         @include breakpoint(max, lg) {
             width: 100%;
-            
+
             justify-content: center
         }
 
-@include breakpoint(max, md) {
+        @include breakpoint(max, md) {
             min-width: inherit;
         }
+
         .imageWrap {
             @include displayFlex(row, flex-start, flex-start);
             flex-wrap: wrap;
-            gap: 1px;
+            // gap: 1px;
 
             @include breakpoint(max, lg) {
                 justify-content: center
@@ -40,6 +41,7 @@
             opacity: 0;
             transform: scaleX(-1);
             transition: 0.5s ease-in-out;
+            border: 1px solid hsl(var(--white));
             // opacity: 0;
             // animation: fadeIn 0.6s forwards;
 
@@ -72,46 +74,54 @@
 
         }
 
-        :global(.swiper-slide-prev) {
-            .tile {
-                opacity: 1;
-
-            }
-        }
-
+        
+:global(.swiper-slide-prev),
         :global(.swiper-slide-active) {
 
             // opacity: 1 !important;
             .tile {
-                transform: scaleX(1);
-                opacity: 1;
+                
 
                 &:nth-of-type(3) {
                     transition-delay: 2s;
+                    transform: scaleX(1);
+                opacity: 1;
                 }
 
                 &:nth-of-type(4) {
                     transition-delay: 6.5s;
+                    transform: scaleX(1);
+                opacity: 1;
                 }
 
                 &:nth-of-type(6) {
                     transition-delay: 3.5s;
+                    transform: scaleX(1);
+                opacity: 1;
                 }
 
                 &:nth-of-type(7) {
                     transition-delay: 7.2s;
+                    transform: scaleX(1);
+                opacity: 1;
                 }
 
                 &:nth-of-type(9) {
                     transition-delay: 5.2s;
+                    transform: scaleX(1);
+                opacity: 1;
                 }
 
                 &:nth-of-type(10) {
                     transition-delay: 4.8s;
+                    transform: scaleX(1);
+                opacity: 1;
                 }
 
                 &:nth-of-type(11) {
                     transition-delay: 5.7s;
+                    transform: scaleX(1);
+                opacity: 1;
                 }
 
             }
@@ -131,9 +141,15 @@
         z-index: 1;
 
         .banner_content {
-            max-width: 750px;
+            max-width: 700px;
             @include displayFlex(column, flex-start, space-between);
             gap: clamp(15px, 6vw, 30px);
+            .white_btn{
+                transition: 0.5s ease-in-out;
+                &:hover{
+                    outline: 1px solid;
+                }
+            }
 
         }
 

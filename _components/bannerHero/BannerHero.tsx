@@ -42,7 +42,7 @@ const BannerHero = () => {
         <Swiper
           modules={[Navigation, Pagination, Autoplay, EffectFade]}
           navigation = {false}
-          autoplay={{ delay: 10000, disableOnInteraction: false }}
+          autoplay={{ delay: 8000, disableOnInteraction: false }}
           loop
           effect="fade"
           speed={900}
@@ -84,9 +84,10 @@ const BannerHero = () => {
             event-driven DataOps, advanced analytics, and industrial AI.
           </p>
 
-          <div className="flex">
+          <div className="flex gap-5">
             <Button link="/contact" text="Request a Demo" />
             <Button
+            className={cn(styles.white_btn)}
               link="/contact"
               text="Watch Video"
               icon={<PLAY_SVG />}
