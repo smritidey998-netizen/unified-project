@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
 
 :root {
   --background: #ffffff;
@@ -7,6 +10,8 @@
   --redText:  15 88% 55%; /* #F15A29 */
   --buttonColorOrange: 15 88% 55%; /* #F15A29 */
   --ordinarytext: 212 10% 25%; /* #383E45 */
+  --white: 0 0% 100%; /* #fff */
+  --black: 0 0% 0%; /* #000 */
 
   --linearGradient: 270deg, #000 81.58%, #F15A29 100%;
 }
@@ -19,6 +24,8 @@
   --color-redText: hsl(var(--redText));
   --color-ordinarytext: hsl(var(--ordinarytext));
   --color-buttonColorOrange: hsl(var(--buttonColorOrange));
+  --color-white: hsl(var(--white));
+  --color-black: hsl(var(--black));
   /* --font-mono: var(--font-geist-mono); */
 }
 
@@ -30,7 +37,7 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: hsl(var(--white));
+  color: hsl(var(--ordinarytext));
   font-family: var(--font-redhat);
 }

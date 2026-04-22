@@ -182,7 +182,7 @@ export const RIGHT_ARROW = () => {
         fillRule="evenodd"
         clipRule="evenodd"
         d="M9.26204 6.26361C8.91057 6.61508 8.91057 7.18493 9.26204 7.5364L13.7256 12L9.26204 16.4636C8.91057 16.8151 8.91057 17.3849 9.26204 17.7364C9.61352 18.0879 10.1834 18.0879 10.5348 17.7364L15.6348 12.6364C15.9863 12.2849 15.9863 11.715 15.6348 11.3636L10.5348 6.2636C10.1834 5.91213 9.61351 5.91213 9.26204 6.26361Z"
-        fill="white"
+        fill="currentColor"
       />
     </svg>
   );
@@ -302,3 +302,11 @@ export const APPLICATIONS = () => {
     </svg>
   );
 };
+
+export const PLAY_SVG = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14" viewBox="0 0 11 14" fill="none">
+  <path d="M10.25 6.875L0 13.75L-6.01032e-07 0L10.25 6.875Z" fill="#F15A29"/>
+</svg>
+  )
+}

@@ -5,35 +5,117 @@
     cursor: pointer;
 
     .expandCard {
-        transition: 0.5s ease-in-out;
+        transition: 1s ease-in-out;
+        width: 20%;
+
+
+
         &:nth-of-type(2),
         &:nth-of-type(3) {
+            justify-content: space-between;
             background: linear-gradient(180deg, #FFF 9.13%, #8E8E8E 107.8%);
             filter: drop-shadow(-10px -6px 20px rgba(0, 0, 0, 0.11));
             padding-inline-end: 0;
             padding-block-end: 0;
-            .des,.subtitle , .link{
-                transition: 0.5s ease-in-out;
-                scale: 0;
-                height: 0;
-                width: 0;
+
+            @include breakpoint(min, lg) {
+                .expandContent {
+                    justify-content: space-between;
+                }
+
+                .des,
+                .subtitle,
+                .link {
+                    opacity: 0;
+                    ;
+                    transform-origin: left;
+                    transition: 0.5s ease-in-out;
+                    scale: 0;
+                    height: 0;
+                    width: 0;
+                }
             }
         }
 
-        &:nth-of-type(2) {
-            grid-column: span 2;
-            flex-direction: row;
-            .des,.subtitle , .link{
-                scale: 1;
-                height: auto;
-                width: fit-content;
+        @include breakpoint(min, lg) {
+            &:nth-of-type(2) {
+                width: 40%;
+                flex-direction: row;
+
+                .des,
+                .subtitle,
+                .link {
+                    opacity: 1;
+                    scale: 1;
+                    height: auto;
+                    width: fit-content;
+                }
+
+                .subtitle {
+                    color: hsl(var(--redText));
+                }
+
+                .expandImageHolder {
+                    aspect-ratio: 16 / 8.4;
+                }
             }
-            .subtitle{
-                color: hsl(var(--redText));
+        }
+
+        @include breakpoint(min, lg) {
+            &:nth-of-type(3):hover {
+                width: 40%;
+
+                flex-direction: row;
+
+                .expandImageHolder {
+                    aspect-ratio: 16 / 8.4;
+                }
+
+                .des,
+                .subtitle,
+                .link {
+                    opacity: 1;
+                    scale: 1;
+                    height: auto;
+                    width: fit-content;
+                }
+
+                .subtitle {
+                    color: hsl(var(--redText));
+                }
+
             }
-            .expandImageHolder{
-                aspect-ratio: 16/8;
+
+        }
+
+        @include breakpoint(max, lg) {
+            width: 100%;
+        }
+
+    }
+
+    @include breakpoint(min, lg) {
+        &:has(.expandCard:nth-of-type(3):hover) {
+            .expandCard:nth-of-type(2):not(:hover) {
+                width: 20%;
+
+                flex-direction: column;
+
+                .expandImageHolder {
+                    aspect-ratio: 16 / 16;
+                }
+
+                .des,
+                .subtitle,
+                .link {
+                    opacity: 0;
+                    scale: 0;
+                    height: 0;
+                    width: 0;
+                }
+
             }
         }
     }
+
 }

@@ -60,23 +60,23 @@ const expandLists: ExpandItem[] = [
 
 const ExpandSection = () => {
   return (
-    <section className={cn(styles.expandSection, "w-full")}>
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5 ">
+    <section className={cn(styles.expandSection, "w-full bg-black")}>
+      <div className="flex gap-4 items-stretch lg:flex-row flex-col">
         {expandLists.map((item) => (
           <article
             key={item.title}
             className={cn(
               styles.expandCard,
-              "flex h-full flex-col gap-4 bg-white p-6 justify-between items-stretch",
+              "flex flex-col gap-4 bg-white p-6 justify-between items-stretch overflow-hidden",
             )}
           >
             <div className={cn(styles.expandIcon, "shrink-0")}>{item.icon}</div>
 
             <div className={cn(styles.expandContent, 'flex flex-col gap-4 h-full relative')}>
-              <div className="space-y-2">
+              <div className="space-y-2 pr-2">
                 <h4
                   className={cn(
-                    global.details_big2,
+                    global.details_big,
                     "font-semibold text-black",
                   )}
                 >
@@ -94,7 +94,7 @@ const ExpandSection = () => {
                 </h4>
               </div>
 
-              <p className={cn(global.body1, styles.des, "text-ordinarytext")}>
+              <p className={cn(global.body1, styles.des, "text-ordinarytext pr-2")}>
                 {item.description}
               </p>
 
@@ -112,7 +112,7 @@ const ExpandSection = () => {
               ) : null}
 
               {item.image ? (
-                <div className={cn(styles.expandImageHolder, "relative aspect-[16/16] overflow-hidden")}>
+                <div className={cn(styles.expandImageHolder, "relative aspect-[16/16] h-[280px] overflow-hidden transition-duration-500")}>
                   <Image
                     src={item.image}
                     alt={item.title}
