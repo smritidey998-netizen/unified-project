@@ -5,11 +5,11 @@
 
 .custom_container {
   width: 100%;
-  max-width: min(100% - toRem(60px), toRem(1300px));
+  max-width: min(100% - toRem(60px), toRem(1340px));
   margin-inline: auto;
 
   @include breakpoint(max, md) {
-    max-width: min(100% - toRem(30px), toRem(1300px));
+    max-width: min(100% - toRem(30px), toRem(1340px));
   }
 }
 

@@ -1,0 +1,39 @@
+@use "../../theme/sass" as *;
+
+.expandSection {
+    padding-block: clamp(40px, 6vw, 80px);
+    cursor: pointer;
+
+    .expandCard {
+        transition: 0.5s ease-in-out;
+        &:nth-of-type(2),
+        &:nth-of-type(3) {
+            background: linear-gradient(180deg, #FFF 9.13%, #8E8E8E 107.8%);
+            filter: drop-shadow(-10px -6px 20px rgba(0, 0, 0, 0.11));
+            padding-inline-end: 0;
+            padding-block-end: 0;
+            .des,.subtitle , .link{
+                transition: 0.5s ease-in-out;
+                scale: 0;
+                height: 0;
+                width: 0;
+            }
+        }
+
+        &:nth-of-type(2) {
+            grid-column: span 2;
+            flex-direction: row;
+            .des,.subtitle , .link{
+                scale: 1;
+                height: auto;
+                width: fit-content;
+            }
+            .subtitle{
+                color: hsl(var(--redText));
+            }
+            .expandImageHolder{
+                aspect-ratio: 16/8;
+            }
+        }
+    }
+}

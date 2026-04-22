@@ -1,0 +1,87 @@
+@use '../../../theme/sass' as *;
+
+
+    :root {
+      --tw-burger-w: 24px;      /* line width  */
+      --tw-burger-h: 2px;       /* line height */
+      --tw-burger-gap: 6px;     /* distance from center to top/bottom lines */
+    }
+
+    .custom_container{
+
+      /* Target your existing button */
+      .hum_btn {
+        /* middle line via background */
+        background-image: linear-gradient(currentColor, currentColor);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: var(--tw-burger-w) var(--tw-burger-h);
+    
+        /* Tailwind utilities */
+        // @apply relative text-black transition-all duration-300 ease-out;
+      }
+    
+  
+    
+      /* Top & bottom lines */
+      .hum_btn::before,
+      .hum_btn::after {
+        content: "";
+        left: 50%;
+        top: 50%;
+        width: var(--tw-burger-w);
+        height: var(--tw-burger-h);
+        transform: translate(-50%, calc(-50% - var(--tw-burger-gap)));
+        // @apply absolute rounded bg-current transition-transform duration-300 ease-out;
+      }
+    
+      /* Bottom line starts below center */
+      .hum_btn::after {
+        transform: translate(-50%, calc(-50% + var(--tw-burger-gap)));
+      }
+    
+      /* ===== Open state (aria-expanded="true") ===== */
+      /* Shrink the middle line to zero width */
+      .hum_btn {
+        background-size: 0 var(--tw-burger-h);
+      }
+    
+      /* Rotate top/bottom to form an X */
+      .hum_btn::before {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+      .hum_btn::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    
+      /* Optional: nicer focus state + dark mode color */
+      // button[aria-controls="site-menu"]:focus-visible {
+      //   @apply ring-2 ring-cyan-300 outline-none;
+      // }
+      // .dark button[aria-controls="site-menu"] {
+      //   @apply text-white;
+      // }
+    
+      /* Reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        .hum_btn[aria-controls="site-menu"],
+        .hum_btn[aria-controls="site-menu"]::before,
+        .hum_btn[aria-controls="site-menu"]::after {
+          transition: none !important;
+        }
+      }
+    
+  
+  /* Full-screen menu clipPath animations */
+  .clip-transition {
+      transition: clipPath 520ms cubic-bezier(.2,.8,.2,1);
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+      .clip-transition {
+        transition: none !important;
+      }
+    }
+    }
+
+  

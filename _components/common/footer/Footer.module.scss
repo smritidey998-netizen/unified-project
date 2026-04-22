@@ -1,0 +1,188 @@
+@use "../../../theme/sass" as *;
+
+.footerSec {
+  background: #050505;
+  color: #fff;
+  padding-top: clamp(44px, 6vw, 56px);
+}
+
+.customContainer {
+  padding-bottom: clamp(28px, 4vw, 40px);
+}
+
+.ctaCard {
+  border: 1px solid rgba(241, 90, 41, 0.75);
+  border-radius: toRem(10px);
+  padding: clamp(28px, 4vw, 50px);
+  background: linear-gradient(
+    92deg,
+    rgba(241, 90, 41, 0.38) -65.83%,
+    #050505 28.09%,
+    #050505 74.65%,
+    rgba(241, 90, 41, 0.38) 161.33%
+  );
+}
+
+.ctaTitle {
+  max-width: toRem(860px);
+}
+
+
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: minmax(toRem(280px), 0.95fr) minmax(toRem(360px), 1.35fr) minmax(toRem(320px), 1.1fr);
+}
+
+.brandColumn,
+.linksColumn,
+.officeColumn,
+.quickLinksColumn,
+.newsletterColumn,
+.footerCopy,
+.footerLegal {
+  min-width: 0;
+}
+
+.brandColumn {
+  grid-row: span 2;
+  border-right: 1px solid rgba(255, 255, 255, 0.16);
+  padding: clamp(34px, 5vw, 48px) clamp(24px, 3vw, 42px) clamp(28px, 4vw, 36px) 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: clamp(44px, 8vw, 90px);
+}
+
+.linksColumn {
+  border-right: 1px solid rgba(255, 255, 255, 0.16);
+  padding: clamp(34px, 5vw, 48px) clamp(26px, 3.5vw, 48px) clamp(26px, 4vw, 34px);
+}
+
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(28px, 4vw, 48px);
+}
+
+.officeColumn {
+  padding: clamp(34px, 5vw, 48px) 0 clamp(26px, 4vw, 34px) clamp(24px, 3vw, 42px);
+}
+
+.quickLinksColumn {
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  border-right: 1px solid rgba(255, 255, 255, 0.16);
+  padding: clamp(26px, 4vw, 34px) clamp(26px, 3.5vw, 48px) clamp(28px, 4vw, 36px);
+}
+
+.newsletterColumn {
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  padding: clamp(26px, 4vw, 34px) 0 clamp(28px, 4vw, 36px) clamp(24px, 3vw, 42px);
+}
+
+.newsletterForm {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+.newsletterInput {
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-right: 0;
+  padding: toRem(16px) toRem(18px);
+  min-height: toRem(56px);
+}
+
+.footerBottom {
+  display: grid;
+  grid-template-columns: minmax(toRem(280px), 0.95fr) minmax(0, 2.45fr);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.footerCopy {
+  border-right: 1px solid rgba(255, 255, 255, 0.16);
+  padding: clamp(22px, 3vw, 30px) clamp(24px, 3vw, 42px) clamp(22px, 3vw, 30px) 0;
+}
+
+.footerLegal {
+  @include displayFlex(row, center, flex-start);
+  flex-wrap: wrap;
+  gap: toRem(20px) clamp(20px, 4vw, 42px);
+  padding: clamp(22px, 3vw, 30px) 0 clamp(22px, 3vw, 30px) clamp(26px, 3.5vw, 48px);
+}
+
+.logoWordmark {
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.footerLink,
+.mutedText {
+  display: inline-block;
+}
+
+.socialLink {
+  background: #f15a29;
+}
+
+@include breakpoint(max, lg) {
+  .footerGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .brandColumn {
+    grid-row: span 1;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    padding-right: 0;
+  }
+
+  .linksColumn,
+  .quickLinksColumn {
+    border-right: 0;
+  }
+
+  .officeColumn,
+  .newsletterColumn {
+    padding-left: 0;
+  }
+
+  .footerBottom {
+    grid-template-columns: 1fr;
+  }
+
+  .footerCopy {
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    padding-right: 0;
+  }
+
+  .footerLegal {
+    padding-left: 0;
+  }
+}
+
+@include breakpoint(max, md) {
+  .ctaCard {
+    padding-inline: clamp(20px, 7vw, 28px);
+  }
+
+  .productsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .newsletterForm {
+    flex-direction: column;
+  }
+
+  .newsletterInput {
+    border-right: 1px solid rgba(255, 255, 255, 0.38);
+    border-bottom: 0;
+  }
+
+  .primaryButton {
+    width: 100%;
+  }
+}
