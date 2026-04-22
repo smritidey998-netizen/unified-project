@@ -1,0 +1,68 @@
+@use "sass:math";
+
+// Convert a value to rem
+@function toRem($value) {
+  // Convert pixel value to rem based on a 16px root font size
+  @if math.unit($value) == px {
+    @return calc(1rem / 16px * $value);
+  } @else {
+    // If value is already in rem or other units, return as-is
+    @return $value;
+  }
+}
+
+// Scale Size According to Width
+@function scaleValue($min, $max, $type: px, $maxViewport: 1240px) {
+  $minViewport: 320px;
+
+  // Calculate viewport range
+  $viewportRange: $maxViewport - $minViewport;
+
+  // Calculate content size range (difference between max and min)
+  $contentSizeRange: $max - $min;
+
+  // If the type is rem, convert min/max to rem and calculate accordingly
+  @if $type == rem {
+    $idealSize: calc(
+      toRem($min) + (100vw * $contentSizeRange / $viewportRange)
+    );
+    @return clamp(toRem($min), $idealSize, toRem($max));
+  } @else {
+    // If the type is px, calculate directly without rem conversion
+    $idealSize: calc($min + (100vw * $contentSizeRange / $viewportRange));
+    @return clamp($min, $idealSize, $max);
+  }
+}
+
+// Flexbox
+@mixin displayFlex($dir, $align, $justify) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin textGradient($clr) {
+  background: $clr;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin textBorderGradient($clr, $stroke: toRem(8px)) {
+  background: $clr;
+  // background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: toRem($stroke) transparent;
+}
+
+@mixin min($minWidth) {
+  @media (min-width: $minWidth) {
+    @content;
+  }
+}
+
+@mixin max($maxWidth) {
+  @media (max-width: $maxWidth) {
+    @content;
+  }
+}

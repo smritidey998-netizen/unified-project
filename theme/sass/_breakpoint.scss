@@ -1,0 +1,57 @@
+$breakpoints: (
+  "max": (
+    "xs": 479px,
+    "sm": 575px,
+    "md": 767px,
+    "lg": 1023px,
+    "xl": 1139px,
+    "xxl": 1199px,
+  ),
+  "min": (
+    "xs": 320px,
+    "sm": 576px,
+    "md": 768px,
+    "lg": 1024px,
+    "xl": 1140px,
+    "xxl": 1200px,
+  ),
+);
+
+// generate main breakpoints
+
+@mixin breakpoint($m, $v) {
+  @each $key, $values in $breakpoints {
+    @if ($m == "max" and $key == "max") {
+      // break the max values
+      @each $bp, $val in $values {
+        @if ($v == $bp) {
+          @media (max-width: $val) {
+            @content;
+          }
+        }
+      }
+    } @else if($m == "min" and $key == "min") {
+      // break the min values
+      @each $bp, $val in $values {
+        @if ($v == $bp) {
+          @media (min-width: $val) {
+            @content;
+          }
+        }
+      }
+    }
+  }
+}
+// breakpoint other
+
+@mixin breakpointOther($m, $v) {
+  @if ($m == "max") {
+    @media (max-width: $v) {
+      @content;
+    }
+  } @else if($m == "min") {
+    @media (min-width: $v) {
+      @content;
+    }
+  }
+}

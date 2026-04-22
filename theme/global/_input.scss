@@ -1,0 +1,45 @@
+@use "../sass/index.scss" as *;
+
+.inputField {
+  background: rgba(255, 255, 255, 0.05);
+  border: toRem(1px) solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(toRem(15px));
+  border-radius: toRem(100px);
+  padding: toRem(12px) toRem(25px);
+  color: #fff;
+  font-size: toRem(16px);
+  height: toRem(50px);
+  width: 100%;
+  outline: none;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  &:focus {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.selectField {
+  @extend .inputField;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right toRem(20px) center;
+  background-size: toRem(20px);
+
+  option {
+    background: #1a1a1a;
+    color: #fff;
+  }
+}
+
+.textareaField {
+  @extend .inputField;
+  height: toRem(120px);
+  border-radius: toRem(20px);
+  resize: none;
+  padding-top: toRem(15px);
+  
+}

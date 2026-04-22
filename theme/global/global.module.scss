@@ -1,0 +1,90 @@
+@use "../sass/index.scss" as *;
+@forward "./fonts";
+@forward "./button";
+@forward "./_input";
+
+.custom_container {
+  width: 100%;
+  max-width: min(100% - toRem(60px), toRem(1300px));
+  margin-inline: auto;
+
+  @include breakpoint(max, md) {
+    max-width: min(100% - toRem(30px), toRem(1300px));
+  }
+}
+
+.custom_container_full {
+  width: 100%;
+  max-width: calc(100% - toRem(60px));
+  margin-inline: auto;
+
+  @include breakpoint(max, md) {
+    max-width: calc(100% - toRem(30px));
+  }
+}
+
+// fonts
+
+.grotesk {
+  font-family: var(--font-grotesk);
+}
+
+.container_big {
+  width: 100%;
+  max-width: min(100% - toRem(40px), toRem(1550px));
+  margin-inline: auto;
+}
+
+.full_container {
+  width: calc(100% - toRem(40px));
+  margin-inline: auto;
+}
+
+.padding_block {
+  padding-block: scaleValue(40px, 100px, rem);
+}
+
+.padding_block_02 {
+  padding-block: scaleValue(60px, 120px, rem);
+}
+
+.padding_block_min {
+  padding-block: scaleValue(40px, 80px, rem);
+}
+
+.padding_block_min_02 {
+  padding-block: scaleValue(40px, 60px, rem);
+}
+
+// Section head
+.opacity80 {
+  opacity: 0.8;
+}
+
+.header_sub {
+  background-color: #0057524d;
+  border-radius: toRem(200);
+  max-width: max-content;
+  padding: toRem(4) toRem(16);
+  text-transform: uppercase;
+  letter-spacing: 1%;
+
+  & > * {
+    text-transform: uppercase;
+    letter-spacing: 1%;
+  }
+}
+
+.error_text {
+  width: 100%;
+  display: block;
+  text-align: start;
+  color: var(--danger);
+  padding-inline: toRem(16px);
+  margin-top: toRem(4px);
+  font-size: toRem(12px);
+}
+
+.break_word {
+  word-break: break-word;
+}
