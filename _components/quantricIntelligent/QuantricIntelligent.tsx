@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import global from "@/theme/global/global.module.scss";
 import styles from "./QuantricIntelligent.module.scss";
 import Button from "../common/button/Button";
+import Image from "next/image";
 
 const features = [
   {
@@ -68,9 +69,12 @@ function LoopIcon() {
 const QuantricIntelligent = () => {
   return (
     <section className={cn(styles.section, "bg-black text-white")}>
+       
       <div className={cn(global.custom_container, styles.inner)}>
         <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr] xl:gap-12">
-          <div className={cn(styles.diagramPanel, 'gap-x-[40px] gap-y-6')}>
+          <div className={cn(styles.diagramPanel, 'gap-x-[40px] gap-y-6 relative')}>
+           <Image className={cn(styles.bg_image, 'absolute top-0 left-0')} src="/assests/images/bg-quartic-new.jpg"  width={932} height={693} alt="bg-quartic">
+            </Image>
             <div
               className={cn(
                 "flex font-medium border-2 flex-col gap-5 p-6",

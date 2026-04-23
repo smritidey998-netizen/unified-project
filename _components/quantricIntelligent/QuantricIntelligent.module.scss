@@ -4,10 +4,6 @@
   position: relative;
   overflow: hidden;
   padding-block: clamp(4.5rem, 9vw, 7rem);
-  background:
-    radial-gradient(circle at 20% 20%, rgba(241, 90, 41, 0.12), transparent 22%),
-    radial-gradient(circle at 85% 15%, rgba(151, 214, 223, 0.08), transparent 18%),
-    #020202;
 }
 
 .inner {
