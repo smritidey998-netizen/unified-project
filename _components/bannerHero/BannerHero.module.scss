@@ -19,7 +19,7 @@
     .banner_left {
         width: 50%;
         min-width: 735px;
-
+        max-width: 735px;
         @include breakpoint(max, xl) {
             min-width: 620px;
         }
