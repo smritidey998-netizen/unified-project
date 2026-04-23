@@ -15,6 +15,10 @@
     background: #fff;
     box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
   }
+  .announmentbar{
+    background: linear-gradient(270deg, #000 51.58%, #f15a29 100%);
+    animation: animationSlide 2s linear infinite alternate;
+  }
 }
 .custom_container {
   .hum_btn {
@@ -26,5 +30,13 @@
     .hum_btn * {
       transition: none !important;
     }
+  }
+}
+@keyframes animationSlide {
+  from{
+    transform: translateX(-350px);
+  }
+  to {
+   transform: translateX(0px);
   }
 }

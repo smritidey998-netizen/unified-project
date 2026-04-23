@@ -164,12 +164,13 @@ export default function Header() {
       )}
     >
       <div
-        className={cn(
-          "bg-linear-[var(--linearGradient)] text-center text-black text-white",
+        className={cn( 
+          "bg-linear-[var(--linearGradient)] text-center text-black text-white relative overflow-hidden",
         )}
       >
+        <div className={cn(styles.announmentbar, "absolute top-0 left-0 h-full w-full")}></div>
         <div className={cn(global.custom_container)}>
-          <div className="items-center justify-center gap-2 p-3 font-medium">
+          <div className="items-center justify-center gap-2 p-3 font-medium z-10 relative">
             <span className="mr-2 rounded-sm bg-skyBlue px-2 py-0.5 text-black md:text-base text-xs">
               Webinar
             </span>
