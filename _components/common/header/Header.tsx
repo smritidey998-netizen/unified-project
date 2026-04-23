@@ -12,7 +12,20 @@ import global from "@/theme/global/global.module.scss";
 import styles from "./Header.module.scss";
 import { useWindowScroll } from "@/utilities/hooks/useWindowScroll";
 
-const desktopNavItems = [
+type DesktopNavSubItem = {
+  label: string;
+  description: string;
+  href: string;
+};
+
+type DesktopNavItem = {
+  label: string;
+  href: string;
+  hasDropdown?: boolean;
+  submenu?: readonly DesktopNavSubItem[];
+};
+
+const desktopNavItems: readonly DesktopNavItem[] = [
   {
     label: "Product",
     href: "/product",
@@ -60,8 +73,6 @@ const desktopNavItems = [
     hasDropdown: true,
   },
 ] as const;
-
-type DesktopNavItem = (typeof desktopNavItems)[number];
 
 function isPathActive(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
