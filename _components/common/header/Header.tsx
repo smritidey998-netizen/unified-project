@@ -202,7 +202,7 @@ export default function Header() {
             />
           </Link>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3  lg:pr-0 pr-4">
             <nav
               aria-label="Primary navigation"
               className="hidden flex-1 items-center justify-center lg:flex"
