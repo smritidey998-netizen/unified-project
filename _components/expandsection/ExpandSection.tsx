@@ -67,7 +67,7 @@ const ExpandSection = () => {
             key={item.title}
             className={cn(
               styles.expandCard,
-              "flex flex-col gap-4 bg-white p-6 justify-between items-stretch overflow-hidden",
+              "flex flex-col gap-4 bg-white xxl:p-10 xl:p-8 p-6 justify-between items-stretch overflow-hidden",
             )}
           >
             <div className={cn(styles.expandIcon, "shrink-0")}>{item.icon}</div>
