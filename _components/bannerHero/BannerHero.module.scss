@@ -3,9 +3,11 @@
 .bannerHero {
     @include displayFlex(row, flex-end, space-between);
     padding-block-start: 48px;
+
     @include breakpointOther('max', '1400px') {
         padding-block-start: 120px;
     }
+
     @include breakpoint('max', 'sm') {
         padding-block-start: 150px;
     }
@@ -81,54 +83,54 @@
 
         }
 
-        
-:global(.swiper-slide-prev),
+
+        :global(.swiper-slide-prev),
         :global(.swiper-slide-active) {
 
             // opacity: 1 !important;
             .tile {
-                
+
 
                 &:nth-of-type(3) {
                     transition-delay: 2s;
                     transform: scaleX(1);
-                opacity: 1;
+                    opacity: 1;
                 }
 
                 &:nth-of-type(4) {
                     transition-delay: 6.5s;
                     transform: scaleX(1);
-                opacity: 1;
+                    opacity: 1;
                 }
 
                 &:nth-of-type(6) {
                     transition-delay: 3.5s;
                     transform: scaleX(1);
-                opacity: 1;
+                    opacity: 1;
                 }
 
                 &:nth-of-type(7) {
                     transition-delay: 7.2s;
                     transform: scaleX(1);
-                opacity: 1;
+                    opacity: 1;
                 }
 
                 &:nth-of-type(9) {
                     transition-delay: 5.2s;
                     transform: scaleX(1);
-                opacity: 1;
+                    opacity: 1;
                 }
 
                 &:nth-of-type(10) {
                     transition-delay: 4.8s;
                     transform: scaleX(1);
-                opacity: 1;
+                    opacity: 1;
                 }
 
                 &:nth-of-type(11) {
                     transition-delay: 5.7s;
                     transform: scaleX(1);
-                opacity: 1;
+                    opacity: 1;
                 }
 
             }
@@ -144,23 +146,24 @@
         width: 60%;
         margin-left: -70px;
         padding-bottom: clamp(40px, 6vw, 70px);
-    padding-right: 15px;
-
+        padding-right: 15px;
         z-index: 1;
-            background: rgb(255 255 255 / 20%);
-   
-    backdrop-filter: blur(10px);
+        background: rgb(255 255 255 / 20%);
+        backdrop-filter: blur(10px);
         @include breakpoint(max, xl) {
-             padding-left: 30px;
-             padding-top: 30px;
+            padding-left: 30px;
+            padding-top: 30px;
         }
+
         .banner_content {
             max-width: 700px;
             @include displayFlex(column, flex-start, space-between);
             gap: clamp(15px, 6vw, 30px);
-            .white_btn{
+
+            .white_btn {
                 transition: 0.5s ease-in-out;
-                &:hover{
+
+                &:hover {
                     outline: 1px solid;
                 }
             }
@@ -169,7 +172,6 @@
 
         @include breakpoint(max, lg) {
             width: 100%;
-            margin-top: 30px;
             padding-inline: 20px;
         }
     }

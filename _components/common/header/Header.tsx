@@ -28,7 +28,7 @@ type DesktopNavItem = {
 const desktopNavItems: readonly DesktopNavItem[] = [
   {
     label: "Product",
-    href: "/product",
+    href: "#",
     hasDropdown: true,
     submenu: [
       {
@@ -55,21 +55,21 @@ const desktopNavItems: readonly DesktopNavItem[] = [
   },
   {
     label: "Solutions",
-    href: "/solutions",
+    href: "#",
     hasDropdown: true,
   },
   {
     label: "Customers",
-    href: "/customers",
+    href: "#",
   },
   {
     label: "Resource Hub",
-    href: "/resource-hub",
+    href: "#",
     hasDropdown: true,
   },
   {
     label: "Company",
-    href: "/company",
+    href: "#",
     hasDropdown: true,
   },
 ] as const;
