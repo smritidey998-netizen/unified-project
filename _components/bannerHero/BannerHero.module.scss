@@ -3,7 +3,9 @@
 .bannerHero {
     @include displayFlex(row, flex-end, space-between);
     padding-block-start: 48px;
-
+    @include breakpointOther('min', '1600px') {
+        margin-inline: auto;
+    }
     @include breakpointOther('max', '1400px') {
         padding-block-start: 120px;
     }

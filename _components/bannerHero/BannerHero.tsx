@@ -36,7 +36,7 @@ const slides = [
 const BannerHero = () => {
   return (
     <section
-      className={cn(styles.bannerHero, "relative overflow-hidden bg-white max-w-1500px xl:mx-auto")}
+      className={cn(styles.bannerHero, "relative overflow-hidden bg-white max-w-1600px")}
     >
       <div className={cn(styles.banner_left)}>
         <Swiper
